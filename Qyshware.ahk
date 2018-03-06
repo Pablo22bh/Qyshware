@@ -223,7 +223,7 @@ Gui, Add, Button, x192 y109 w80 h20 gAimbotHelp, Help
 Gui, Add, Text, x12 y49 w50 h20 , Speed:
 Gui, Add, Slider, x72 y49 w200 h20 vab_s gUpdate +ToolTip AltSubmit Range1-50, %Ini_ab_s%
 Gui, Add, Text, x12 y79 w50 h20 , Delay:
-Gui, Add, Slider, x72 y79 w200 h20 vab_d gUpdate +ToolTip AltSubmit Range0-500, %Ini_ab_d%
+Gui, Add, Slider, x72 y79 w200 h20 vab_d gUpdate +ToolTip AltSubmit Range0-10, %Ini_ab_d%
 Gui, Add, Radio, x12 y109 w80 h20 vab_h gUpdate, Hold
 Gui, Add, Radio, x102 y109 w80 h20 vab_t gUpdate, Toggle
 Gui, Add, Text, x12 y141 w50 h20 , Key:
