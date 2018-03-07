@@ -1,0 +1,7 @@
+# Execute those Commands in CS:GO for best Results!
+
+# cl_radar_always_centered 1; cl_radar_icon_scale_min 1; cl_radar_rotate 1; cl_radar_scale 1; cl_hud_radar_scale 1
+
+# You have to play in "Windowed Fullscreen" otherways it wont work!
+
+# 1920x1080 is recommended! 
