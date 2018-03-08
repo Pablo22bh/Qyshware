@@ -1,6 +1,54 @@
-﻿If(A_IsAdmin)
+﻿cversion := 11
+global cversion
+If(A_IsAdmin)
 {
-	Goto, checked
+	IfExist, C:\Users\%A_UserName%\check.txt
+	{
+		FileDelete, C:\Users\%A_UserName%\check.txt
+	}
+    URLDownloadToFile, https://raw.githubusercontent.com/MoHatKnock/Qyshware/master/status.txt, C:\Users\%A_UserName%\check.txt
+    FileSetAttrib, +H, C:\Users\%A_UserName%\check.txt
+	ToolTip
+	IfNotExist, C:\Users\%A_UserName%\check.txt
+	{
+		MsgBox, 64, Update check, Error while checking for Updates.
+		Goto, checked
+	}
+	IfExist, C:\Users\%A_UserName%\check.txt
+	{
+		FileReadLine, check, C:\Users\%A_UserName%\check.txt, 1
+		FileReadLine, version, C:\Users\%A_UserName%\check.txt, 2
+		FileReadLine, line1, C:\Users\%A_UserName%\check.txt, 3
+		FileReadLine, line2, C:\Users\%A_UserName%\check.txt, 4
+		FileReadLine, line3, C:\Users\%A_UserName%\check.txt, 5
+		FileReadLine, line4, C:\Users\%A_UserName%\check.txt, 6
+		Sleep, 1000
+		if(check==2)
+		{
+			MsgBox, 64, Info, %line1%`n%line2%`n%line3%`n%line4%
+		}
+		else if(check==1)
+		{
+			if(cversion != version)
+			{
+				version := version / 10
+				ver := Rtrim(version, "0")
+				MsgBox, 68, Update, Qyshware v%ver% is out! do you want to go to the Github page?
+				IfMsgBox, Yes
+				{
+					Run, https://github.com/MoHatKnock/Qyshware
+				}
+				IfMsgBox, No
+				{
+					Goto, checked
+				}
+			}
+			else
+			{
+				Goto, checked
+			}
+		}
+	}
 }
 If(!A_IsAdmin)
 {
@@ -371,7 +419,7 @@ AimbotHelp:
 	MsgBox, 36, Aimbot Help, Do you want to open the Help page?
 	IfMsgBox, Yes
 	{
-		MsgBox, Temporarily disabled! ;Run, https://hastebin.com/qemumiduyi.vbs
+		Run, https://raw.githubusercontent.com/MoHatKnock/Qyshware/master/Aimbothelp.txt
 	}
 return
 
@@ -379,7 +427,7 @@ triggerhelp:
 MsgBox, 36, Triggerbot Help, Do you want to open the Help page?
 	IfMsgBox, Yes
 	{
-		MsgBox, Temporarily disabled! ;Run, https://hastebin.com/aqeririxeg.pl
+		Run, https://raw.githubusercontent.com/MoHatKnock/Qyshware/master/Triggerbothelp.txt
 	}
 return
 
