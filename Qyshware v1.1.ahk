@@ -448,7 +448,7 @@ SubmitColor:
 return
 
 tl:
-	MsgBox, Temporarily disabled!
+	Run, https://www.unknowncheats.me/forum/cs-go-releases/265872-ahk-external-aimbot-triggerbot-lessrecoil-drag-source.html#post2040676
 return
 
 RGB(r, g, b) {
