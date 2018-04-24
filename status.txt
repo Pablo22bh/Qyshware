@@ -1,6 +1,6 @@
 1
-11
-a
-b
-c
-d
+15
+v1.5 
+Universal (works for every Resolution FullHD recommended)
+READ THE README.md FILE!!
+Have fun :)
